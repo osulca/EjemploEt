@@ -12,19 +12,29 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button boton = findViewById(R.id.btnIntent);
-        boton.setOnClickListener(this);
+        Button boton1 = findViewById(R.id.btnIntent1);
+        Button boton2 = findViewById(R.id.btnIntent2);
+        boton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, OtraActivity.class);
+                startActivity(intent);
+            }
+        });
+        boton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    @Override
-    public void onClick(View view) {
-        Intent intent = new Intent(MainActivity.this,OtraActivity.class);
-        startActivity(intent);
-    }
+
 }
