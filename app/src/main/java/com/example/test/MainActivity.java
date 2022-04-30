@@ -18,23 +18,15 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button boton1 = findViewById(R.id.btnIntent1);
-        Button boton2 = findViewById(R.id.btnIntent2);
-        boton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, OtraActivity.class);
-                startActivity(intent);
-            }
-        });
-        boton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                startActivity(intent);
-            }
-        });
     }
 
+    public void AbrirActivity2(View view) {
+        Intent intent = new Intent(MainActivity.this, OtraActivity.class);
+        startActivity(intent);
+    }
 
+    public void AbrirActivity3(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent);
+    }
 }
